@@ -1,6 +1,40 @@
-*.class
+/**
+ * @author octopus
+ * E-mail：zhangyu_neusoft@sina.com
+ * @version 
+ * Created on 2013-5-14 下午9:00:21
+ * All  Right	Reserved
+ * 
+ */
 
-# Package Files #
-*.jar
-*.war
-*.ear
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JFrame;
+
+class changeFrameTitle extends JFrame implements MouseListener{
+	changeFrameTitle(){
+		setSize(200, 150);
+		setLocation(400, 300);
+		this.addMouseListener(this);
+	}
+	
+	public void mouseEntered(MouseEvent e){}
+	public void mouseExited(MouseEvent e){}
+	public void mouseClicked(MouseEvent e){}
+	
+	public void mousePressed(MouseEvent e){
+		setTitle("change window title");
+	}
+	
+	public void mouseReleased(MouseEvent e){
+		setTitle("改变窗口标题");
+	}
+}
+
+public class ex_9_2_7 {
+	public static void main(String[] args){
+		changeFrameTitle cft=new changeFrameTitle();
+		cft.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		cft.setVisible(true);
+	}
+}
